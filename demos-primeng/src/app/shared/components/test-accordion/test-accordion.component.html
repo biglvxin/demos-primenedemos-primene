@@ -1,1 +1,35 @@
-<p>test-accordion works!</p>
+
+<p-multiSelect [options]="brands" [(ngModel)]="selectedCars2">
+
+</p-multiSelect>
+
+  <p-accordion [multiple]="true">
+    <p-accordionTab header="Header 1">
+     <p-accordion [multiple]="true">
+       <p-accordionTab header="Header 1">
+         <p-checkbox></p-checkbox>Content 1.1
+          <p-checkbox></p-checkbox>Content 1.1
+           <p-checkbox></p-checkbox>Content 1.1
+       </p-accordionTab>
+       <p-accordionTab header="Header 2">
+          <p-checkbox></p-checkbox>Content 1.2
+       </p-accordionTab>
+       <p-accordionTab header="Header 3">
+          <p-checkbox></p-checkbox>Content 1.3
+       </p-accordionTab>
+     </p-accordion>
+    </p-accordionTab>
+    <p-accordionTab header="Header 2">
+       <p-checkbox></p-checkbox>Content 2
+    </p-accordionTab>
+    <p-accordionTab header="Header 3">
+       <p-accordion [multiple]="true">
+         <p-accordionTab header="Header 1">
+           <p-checkbox></p-checkbox>Content 3.1
+         </p-accordionTab>
+         <p-accordionTab header="Header 2">
+            <p-checkbox></p-checkbox>Content 3.2
+         </p-accordionTab>
+       </p-accordion>
+    </p-accordionTab>
+  </p-accordion>

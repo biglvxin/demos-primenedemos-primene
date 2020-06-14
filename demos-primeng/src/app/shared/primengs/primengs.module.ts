@@ -4,8 +4,8 @@ import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DialogModule } from 'primeng/dialog';
-import { TestTableComponent } from '../components/test-table/test-table.component';
-import { TestDialogComponent } from '../components/test-dialog/test-dialog.component';
+import { AccordionModule } from 'primeng/accordion';
+import { CheckboxModule } from 'primeng/checkbox';
 
 
 
@@ -16,13 +16,17 @@ import { TestDialogComponent } from '../components/test-dialog/test-dialog.compo
     TableModule,
     DropdownModule,
     MultiSelectModule,
-    DialogModule
+    DialogModule,
+    AccordionModule,
+    CheckboxModule
   ],
   exports: [
     TableModule,
     DropdownModule,
     MultiSelectModule,
-    DialogModule
+    DialogModule,
+    AccordionModule,
+    CheckboxModule
   ]
 })
 export class PrimengsModule { }
