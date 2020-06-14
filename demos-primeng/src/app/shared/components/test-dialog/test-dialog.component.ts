@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-dialog.component.css']
 })
 export class TestDialogComponent implements OnInit {
-
+  public displayModal = false;
   constructor() { }
 
   ngOnInit() {
+  }
+  showModalDialog() {
+    this.displayModal = true;
   }
 
 }

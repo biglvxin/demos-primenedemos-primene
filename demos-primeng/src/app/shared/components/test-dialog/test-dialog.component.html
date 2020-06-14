@@ -1,1 +1,9 @@
-<p>test-dialog works!</p>
+<button type="button" (click)="showModalDialog()" class="btn btn-primary"><i class="fa fa-user"></i>show</button>
+<p-dialog header="Godfather I" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+  [draggable]="false" [resizable]="false">
+    内容
+  <p-footer>
+    <button type="button" (click)="displayModal=false" >yes</button>
+    <button type="button"  (click)="displayModal=false" class="ui-button-secondary">no</button>
+  </p-footer>
+</p-dialog>
