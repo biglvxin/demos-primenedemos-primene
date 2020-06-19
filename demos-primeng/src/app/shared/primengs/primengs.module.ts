@@ -6,6 +6,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { DialogModule } from 'primeng/dialog';
 import { AccordionModule } from 'primeng/accordion';
 import { CheckboxModule } from 'primeng/checkbox';
+import { TreeModule } from 'primeng/tree';
+import { TreeNode } from 'primeng/api';
 
 
 
@@ -18,7 +20,8 @@ import { CheckboxModule } from 'primeng/checkbox';
     MultiSelectModule,
     DialogModule,
     AccordionModule,
-    CheckboxModule
+    CheckboxModule,
+    TreeModule
   ],
   exports: [
     TableModule,
@@ -26,7 +29,8 @@ import { CheckboxModule } from 'primeng/checkbox';
     MultiSelectModule,
     DialogModule,
     AccordionModule,
-    CheckboxModule
+    CheckboxModule,
+    TreeModule
   ]
 })
 export class PrimengsModule { }

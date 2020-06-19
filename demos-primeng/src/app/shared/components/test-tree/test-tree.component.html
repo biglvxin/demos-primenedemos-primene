@@ -1,0 +1,13 @@
+<p>test-tree works!</p>
+<p-tree [value]="files" 
+selectionMode="checkbox" 
+[(selection)]="selectedFiles"
+ (onNodeSelect)="nodeSelect($event)"
+  [filter]="true" 
+  scrollHeight="200px">
+</p-tree>
+
+<p>test-tree works!</p>
+<p-tree [value]="files2" selectionMode="checkbox" [(selection)]="selectedFiles" (onNodeSelect)="nodeSelect($event)"
+  [filter]="true" scrollHeight="200px">
+</p-tree>
