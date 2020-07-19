@@ -6,6 +6,7 @@ import { TestDialogComponent } from './components/test-dialog/test-dialog.compon
 import { TestAccordionComponent } from './components/test-accordion/test-accordion.component';
 import { FormsModule } from '@angular/forms';
 import { TestTreeComponent } from './components/test-tree/test-tree.component';
+import { InitTestTreeComponent } from './components/init-test-tree/init-test-tree.component';
 
 
 
@@ -17,6 +18,7 @@ import { TestTreeComponent } from './components/test-tree/test-tree.component';
     TestDialogComponent,
     TestAccordionComponent,
     TestTreeComponent,
+    InitTestTreeComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { TestTreeComponent } from './components/test-tree/test-tree.component';
     TestTableComponent,
     TestDialogComponent,
     TestAccordionComponent,
-    TestTreeComponent
+    TestTreeComponent,
+    InitTestTreeComponent
   ]
 })
 export class SharedModule { }

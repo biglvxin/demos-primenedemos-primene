@@ -4,10 +4,17 @@ selectionMode="checkbox"
 [(selection)]="selectedFiles"
  (onNodeSelect)="nodeSelect($event)"
   [filter]="true" 
-  scrollHeight="200px">
+  scrollHeight="200px"
+  expanded="true"
+  metaKeySelection = true
+  (onNodeDrop)="onDrop($event)">
+  <ng-template let-node pTemplate="default">
+    <span class="treenod-content" [ngClass]="{'treenode-content-selected': node.selected}" [innerHTML]="node.label"></span>
+  </ng-template>
 </p-tree>
 
 <p>test-tree works!</p>
 <p-tree [value]="files2" selectionMode="checkbox" [(selection)]="selectedFiles" (onNodeSelect)="nodeSelect($event)"
   [filter]="true" scrollHeight="200px">
+ 
 </p-tree>

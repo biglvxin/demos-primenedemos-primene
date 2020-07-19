@@ -1,0 +1,6 @@
+::ng-deep.treenode-content-selected {
+    color: #008aef;
+}
+::ng-deep .ui-tree .ui-tree-container .ui-treenode .ui-treenode-content .ui-chkbox .ui-chkbox-icon {
+ color: #008aef;
+}

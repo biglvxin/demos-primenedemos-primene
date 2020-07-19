@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChange } from '@angular/core';
+import { TreeNode } from 'primeng/api';
 
 @Component({
   selector: 'app-test-tree',
@@ -9,9 +10,23 @@ export class TestTreeComponent implements OnInit {
   public files = [];
   public files2 = [];
   public selectedFiles: any;
+  testSelect = [
+    { "label": "Expenses.doc", "icon": "pi pi-file", "data": "Expenses Document", "selected": true },
+    { "label": "Resume.doc", "icon": "pi pi-file", "data": "Resume Document", "selected": true }
+  ];
   constructor() { }
+  ngOnChanges(changes: SimpleChange) {
+    console.log(changes);
+  }
+  loadInitSelected() {
+    this.testSelect.map (item => {
+      this.nodeSelect({node: item})
+    })
 
+  }
   ngOnInit() {
+    this.loadInitSelected();
+    
     this.files = [
       {
         'label': 'Documents',
@@ -23,8 +38,10 @@ export class TestTreeComponent implements OnInit {
           "data": "Work Folder",
           "expandedIcon": "pi pi-folder-open",
           "collapsedIcon": "pi pi-folder",
-          "children": [{ "label": "Expenses.doc", "icon": "pi pi-file", "data": "Expenses Document" }, { "label": "Resume.doc", "icon": "pi pi-file", "data": "Resume Document" }]
-        },
+          "children": [
+            { "label": "Expenses.doc", "icon": "pi pi-file", "data": "Expenses Document", "selected": true }, 
+            { "label": "Resume.doc", "icon": "pi pi-file", "data": "Resume Document"}],
+          },
         {
           "label": "Home",
           "data": "Home Folder",
@@ -60,6 +77,15 @@ export class TestTreeComponent implements OnInit {
         }]
       }
     ];
+    this.selectedFiles = [
+      {
+        "label": "Expenses.doc",
+        "icon": "pi pi-file",
+        "data": "Expenses Document",
+        "selected": true
+      }
+    ];
+    this.expandAll();
     this.files2 = [
       {
         'label': 'Documents2',
@@ -109,11 +135,45 @@ export class TestTreeComponent implements OnInit {
       }
     ];
     console.log(this.files);
-    console.log(this.selectedFiles);
+    // this.files  = this.files.map (item => {
+    //   item.partialSelected = true;
+    //   item.checked = true;
+    //   return item;
+    // })
+    // console.log(this.selectedFiles);
   }
   nodeSelect(event) {
     console.log(event);
     console.log(this.selectedFiles);
+    // this.selectedFiles = this.selectedFiles.map(item => {
+    //   // item.partialSelected = true;
+    //   return item;
+    // })
+  }
+  onDrop(event) {
+    console.log(event);
+    
+      // event.accept();
+    
+  }
+  expandAll() {
+    this.files.forEach(node => {
+      this.expandRecursive(node, true);
+    });
   }
 
+  collapseAll() {
+    this.files2.forEach(node => {
+      this.expandRecursive(node, false);
+    });
+  }
+
+  private expandRecursive(node: TreeNode, isExpand: boolean) {
+    node.expanded = isExpand;
+    if (node.children) {
+      node.children.forEach(childNode => {
+        this.expandRecursive(childNode, isExpand);
+      });
+    }
+  }
 }
